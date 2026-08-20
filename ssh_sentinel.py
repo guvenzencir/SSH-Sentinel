@@ -68,7 +68,6 @@ def block_ip(ip):
     print(f"\n[!] TEHLİKE: {ip} adresinden Brute-Force saldırısı tespit edildi!")
     print(f"[*] {ip} adresi iptables ile bloklanıyor...")
     
-    # Zararlı IP'yi ağdan anında düşüren aktif savunma kuralı
     subprocess.call(["iptables", "-A", "INPUT", "-s", ip, "-j", "DROP"])
     
     BANNED_IPS.add(ip)
